@@ -87,16 +87,16 @@ gcloud compute regions describe your-region
 
 Output:
 
-```bash
+```yaml
 creationTimestamp: '1969-12-31T16:00:00.000-08:00'
 description: asia-southeast2
 id: '1440'
 kind: compute#region
 name: asia-southeast2
 quotas:
-- limit: 40.0
-  metric: CPUS
-  usage: 1.0
+- limit: 40.0 #vcpu
+  metric: CPUS #vcpu
+  usage: 1.0 #vcpu
 - limit: 4096.0
   metric: DISKS_TOTAL_GB
   usage: 0.0
@@ -106,9 +106,9 @@ quotas:
 - limit: 8.0
   metric: IN_USE_ADDRESSES
   usage: 1.0
-- limit: 1000.0
-  metric: SSD_TOTAL_GB
-  usage: 20.0
+- limit: 1000.0 #Persistant Storage
+  metric: SSD_TOTAL_GB #Persistant Storage
+  usage: 20.0 #Persistant Storage
 ```
 
 11. Deploy Cluster OKD
