@@ -121,7 +121,8 @@ mkdir okdtest && cd okdtest
 wget https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/stable/openshift-client-linux.tar.gz
 wget https://github.com/openshift/okd/releases/download/4.9.0-0.okd-2022-01-29-035536/openshift-install-linux-4.9.0-0.okd-2022-01-29-035536.tar.gz
 
-tar -zxvf openshift-install-linux-4.9.0-0.okd-2022-01-29-035536.tar.gz openshift-client-linux.tar.gz
+tar -zxvf openshift-install-linux-4.9.0-0.okd-2022-01-29-035536.tar.gz 
+tar -zxvf openshift-client-linux.tar.gz
 
 # Define install-config
 ./openshift-install create install-config
