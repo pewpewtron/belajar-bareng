@@ -8,41 +8,26 @@ data:
     enableUserWorkload: false
     prometheusOperator:
       nodeSelector:
-        node-role.kubernetes.io/router: ""
-      tolerations:
-      - key: "router"
-        operator: "Equal"
-        value: "router"
-        effect: "NoSchedule"
+        node-role.kubernetes.io/worker: ""
 
     prometheusK8s:
       retention: 7d
       nodeSelector:
-        node-role.kubernetes.io/router: ""
-      tolerations:
-      - key: "router"
-        operator: "Equal"
-        value: "router"
-        effect: "NoSchedule"
+        node-role.kubernetes.io/worker: ""
       volumeClaimTemplate:
        spec:
-         storageClassName: managed-nfs-storage
+         storageClassName: standard
          volumeMode: Filesystem
          resources:
            requests:
-             storage: 100Gi
+             storage: 10Gi
 
     alertmanagerMain:
       nodeSelector:
-        node-role.kubernetes.io/router: ""
-      tolerations:
-      - key: "router"
-        operator: "Equal"
-        value: "router"
-        effect: "NoSchedule"
+        node-role.kubernetes.io/worker: ""
       volumeClaimTemplate:
        spec:
-         storageClassName: managed-nfs-storage
+         storageClassName: standard
          volumeMode: Filesystem
          resources:
            requests:
@@ -50,54 +35,24 @@ data:
 
     kubeStateMetrics:
       nodeSelector:
-        node-role.kubernetes.io/router: ""
-      tolerations:
-      - key: "router"
-        operator: "Equal"
-        value: "router"
-        effect: "NoSchedule"
+        node-role.kubernetes.io/worker: ""
 
     grafana:
       nodeSelector:
-        node-role.kubernetes.io/router: ""
-      tolerations:
-      - key: "router"
-        operator: "Equal"
-        value: "router"
-        effect: "NoSchedule"
+        node-role.kubernetes.io/worker: ""
 
     k8sPrometheusAdapter:
       nodeSelector:
-        node-role.kubernetes.io/router: ""
-      tolerations:
-      - key: "router"
-        operator: "Equal"
-        value: "router"
-        effect: "NoSchedule"
+        node-role.kubernetes.io/worker: ""
 
     telemeterClient:
       nodeSelector:
-        node-role.kubernetes.io/router: ""
-      tolerations:
-      - key: "router"
-        operator: "Equal"
-        value: "router"
-        effect: "NoSchedule"
+        node-role.kubernetes.io/worker: ""
 
     openshiftStateMetrics:
       nodeSelector:
-        node-role.kubernetes.io/router: ""
-      tolerations:
-      - key: "router"
-        operator: "Equal"
-        value: "router"
-        effect: "NoSchedule"
+        node-role.kubernetes.io/worker: ""
 
     thanosQuerier:
       nodeSelector:
-        node-role.kubernetes.io/router: ""
-      tolerations:
-      - key: "router"
-        operator: "Equal"
-        value: "router"
-        effect: "NoSchedule"
+        node-role.kubernetes.io/worker: ""
